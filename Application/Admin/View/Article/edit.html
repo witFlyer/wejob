@@ -1,0 +1,122 @@
+<include file="Common:header" />
+		<main class="main_container">
+			<div class="container_box">
+				<div class="main_left" id="main_left">
+					<div id="user_info">
+						<span>当前用户：{$Think.session.user_name}</span>
+					</div>
+					<div id="left_head" onclick="toggle_left_menu()">
+						<span>文章</span>
+						<b class="fa fa-angle-down pull-right" id="left_menu_icon"></b>
+					</div>
+					<ul id="left_menu" class="nav nav-list">
+						<li>
+							<a href="{:U('Article/index')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">文章列表</span>
+							</a>
+						</li>
+						<li>
+							<a href="{:U('Article/add')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">写文章</span>
+							</a>
+						</li>
+						<li>
+							<a href="{:U('ArticleTag/index')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">添加分类</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_content">
+					<div id="breadcrumbs" class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li><i class="fa fa-home home-icon"></i><a href="/">Home</a></li>
+							<li>文章</li>
+							<li>文章列表</li>
+						</ul>
+					</div>
+					<div class="page_content">
+						<div class="row">
+							<div class="col-xs-12">
+								{:W('PageHeader/Render',array('添加文章','N'))}
+								<div class="operate panel panel-default">
+									<div class="panel-body">
+										<div class="pull-left">
+											<a onclick="go_return_url()" class="btn btn-info">返回</a>
+										</div>
+										<div class="pull-right">
+											<a onclick="save()"  class="btn btn-success">保存</a>
+										</div>
+									</div>
+								</div>
+									<form method="post" name="form_data" id="form_data" class="form-horizontal" enctype="multipart/form-data">
+										<input type="hidden" name="user_id" id="user_id" value="{:get_user_id()}" />
+										<input type="hidden" name="opmode" id="opmode" value="edit" />
+										<input type="hidden" name="ajax" id="ajax" value="0" />
+										<input type="hidden" name="id" id="id" value="{$list.id}" />
+										<input type="hidden" name="update_time" id="update_time" value="{$update_time}" />
+										<table class="table table-bordered">
+											<tbody>
+												<tr>
+													<th><nobr>标题<font color="red">*</font></nobr></th>
+													<td colspan="2"><input type="text" class="form-control" id="name" name="name" check="" msg="请填写文章标题" value="{$list.name}"/></td>
+													<td rowspan="3">
+														<input type="hidden" name="cover" id="cover" value="" />
+														<img src=<empty name="list['cover']">"__PUBLIC__/img/default_cover.jpg" <else /> "__ROOT__/Uploads/{$list.cover}" </empty> class="img-thumbnail col-12" id="cover_img" style="width: 100px;height: 100px;"/>
+													</td>
+												</tr>
+												<tr>
+													<th>属性</th>
+													<td colspan="2" class="checkbox" style="border: none;">
+														<label><input type="checkbox" value="1" name="flag[]"/><span style="color: red;">置顶</span></label>
+														<label><input type="checkbox" value="2" name="flag[]"/><span style="color: #660099;">精华</span></label>
+													</td>
+												</tr>
+												<tr>
+													<th class="col-10">关键字</th>
+													<td colspan="2"><input type="text" value="" class="form-control" id="keywords" name="keywords" placeholder="多个关键字用|隔开" value="{$list.keywords}"/></td>
+												</tr>
+												<tr>
+													<th>类别<font color="red">*</font></th>
+													<td colspan="2">
+														<select name="tag" id="tag" class="form-control col-10">
+															<option value="">选择类型</option>
+															{:fill_option($tag_list,$list['tag'])}
+														</select>
+													</td>
+													<td colspan="2">
+														<input type="file" name="uploadify" id="uploadify" value="" />
+														<!--<button class="btn btn-primary">上传图片</button>-->
+													</td>
+												</tr>
+												<tr>
+													<th>正文<font color="red">*</font></th>
+													<td colspan="3">
+														<script id="content" name="content" type="text/plain" style="width:100%;height:500px;"><?php echo(htmlspecialchars_decode($list['content']))?></script>
+													</td>
+												</tr>
+												<tr>
+													<th>外部链接</th>
+													<td colspan="3"><input type="text" value="{$list.url}" class="form-control" id="url" name="url"/></td>
+												</tr>
+												<tr>
+													<th>作者</th>
+													<td><input type="text" name="author" class="form-control" value="{$list.author}"/></td>
+													<th>浏览数</th>
+													<td><input type="see" name="see" class="form-control col-10" value="{$list.see}"/></td>
+												</tr>
+											</tbody>
+										</table>
+									</form>
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>

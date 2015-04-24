@@ -1,0 +1,46 @@
+<script type="text/javascript">
+
+	function add() {
+		$("#opmode").val("add");
+		$("#id").val("");
+		if (check_form("form_data")){
+			sendForm("form_data","", "__SELF__");
+		}
+	};
+	
+	function save() {
+		if ($("#opmode").val() == "") {
+			ui_error("请选择文件夹或新增");
+			return false;
+		} else {
+			if (check_form("form_data")) {
+				sendForm("form_data","", "__SELF__");
+			}
+		}
+	};
+	
+	function del() {
+		ui_confirm('相应的子目录也会自动删除,真的要删除吗?',function(){
+			$("#opmode").val("del");
+			if (check_form("form_data")) {
+				sendForm("form_data", "", "__SELF__");
+			}
+		});
+	}
+	function showData(result){
+		for(var v in result){
+			set_val(v,result[v]);
+		}
+		$("#opmode").val("edit");
+	}
+	$(document).ready(function() {
+		$(".sub_left_menu .tree_menu a").click(function (){
+			$(".sub_left_menu .tree_menu a").removeClass('active');
+			$(this).addClass('active');
+			sendAjax("{:U('systemTag/read')}","id=" + $(this).attr('node'),function (data){
+				showData(data);
+			});
+			return false;
+		})
+	})
+</script>

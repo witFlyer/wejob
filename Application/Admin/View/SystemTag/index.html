@@ -1,0 +1,126 @@
+<include file="Common:header" />
+		<main class="main_container">
+			<div class="container_box">
+				<div class="main_left" id="main_left">
+					<div id="user_info">
+						<span>当前用户：{$Think.session.user_name}</span>
+					</div>
+					<div id="left_head" onclick="toggle_left_menu()">
+						<span>文章</span>
+						<b class="fa fa-angle-down pull-right" id="left_menu_icon"></b>
+					</div>
+					<ul id="left_menu" class="nav nav-list">
+						<li>
+							<a href="{:U('Article/index')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">文章列表</span>
+							</a>
+						</li>
+						<li>
+							<a href="{:U('Article/add')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">写文章</span>
+							</a>
+						</li>
+						<li>
+							<a href="{:U('ArticleTag/index')}">
+								<i class="fa fa-angle-right"></i>
+								<span class="menu_text">添加分类</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="main_content">
+					<div id="breadcrumbs" class="breadcrumbs">
+						<ul class="breadcrumb">
+							<li><i class="fa fa-home home-icon"></i><a href="/">Home</a></li>
+							<li>文章</li>
+							<li>文章列表</li>
+						</ul>
+					</div>
+					<div class="page_content">
+						<div class="row">
+							<div class="col-xs-12">
+								{:W('PageHeader/Render',array('文章管理','N'))}
+								<div class="operate panel panel-default">
+									<div class="panel-body">
+										<div class="pull-left">
+											<a onclick="go_return_url()" class="btn btn-info">返回</a>
+										</div>
+										<div class="pull-right">
+											<a onclick="add()" class="btn btn-primary">新增</a>
+											|
+											<a onclick="save()" class="btn btn-success">保存</a>
+											|
+											<a onclick="del()"  class="btn btn-danger">删除</a>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4 sub_left_menu">
+										<div class="well">
+											<ul class="tree_menu">
+												<foreach name="tag_list" item="v">
+													<li><a node="{$v.id}"><i class="fa fa-angle-right level1"></i><span>{$v.name}</span></a></li>
+												</foreach>
+											</ul>
+										</div>
+									</div>
+									<div class="col-sm-8">
+										<form id="form_data" class="form-horizontal well" name="form_data" method="post">
+											<input type="hidden" name="opmode" id="opmode" value="">
+											<input type="hidden" name="id" id="id" value="">
+											<input type="hidden" name="pid" id="pid" value="0">
+											<input type="hidden" name="ajax" id="ajax" value="0">
+											<div class="form-group">
+												<label for="name" class="col-sm-4 control-label">名称:</label>
+												<div class="col-sm-8">
+													<input type="text" name="name" id="name" value="{$vo.name}" class="form-control" check="required" msg="请填写名称"/>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="sort" class="col-sm-4 control-label">排序:</label>
+												<div class="col-sm-8">
+													<input type="text" name="sort" id="sort" value="" class="form-control" check="required" msg="请填写排序"/>
+												</div>
+											</div>
+											<if condition="$has_pid">
+												<div class="form-group">
+													<label class="col-sm-4 control-label" for="tag_name">父节点*：</label>
+													<div class="col-sm-8">
+														<div class="input-group">
+															<input name="tag_name" class="form-control val" id="tag_name" type="text" msg="请选择父节点" check="required" />
+															<span class="input-group-btn">
+															<button class="btn btn-sm btn-primary" onclick="select_pid()" type="button">
+																选择
+															</button> </span>
+														</div>
+													</div>
+												</div>
+											</if>	
+											<div class="form-group">
+												<label for="is_del" class="col-sm-4 control-label">状态:</label>
+												<div class="col-sm-2">
+													<select name="is_del" id="is_del" class="form-control">
+														<option value="0">启用</option>
+														<option value="1">禁用</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="remark" class="col-sm-4 control-label">备注:</label>
+												<div class="col-sm-8">
+													<textarea name="remark" class="col-xs-12 form-control" id="remark" rows="3"></textarea>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>	

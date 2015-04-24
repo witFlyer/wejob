@@ -1,0 +1,30 @@
+<notempty name="widget.editor">
+	<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+	<script src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/lang/zh-cn/zh-cn.js"></script>
+	<script type="text/javascript">
+    	var ue = UE.getEditor('content');
+    </script>
+</notempty>
+
+<notempty name="widget.upload">
+	<script src="__PUBLIC__/Uploadify/jquery.uploadify.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Uploadify/uploadify.css"/>
+	<script type="text/javascript">
+		$(document).ready(function()
+        {
+            $("#uploadify").uploadify({
+                swf: '__PUBLIC__/Uploadify/uploadify.swf',
+                uploader: '{:U("Article/upload")}',
+ 				fileTypeDesc : 'Image Files',//只允许上传图像
+                multi: false,
+                formData : {'session_id' : sid},
+                onUploadSuccess : function(file, data, response) {
+           			$('#cover_img').attr('src','__ROOT__/Uploads/'+ data);
+           			$('#cover').val(data);
+        		},
+            });
+        });  
+	</script>
+	
+</notempty>

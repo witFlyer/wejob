@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Login/login.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/button.css">
+		
+		<script src="__PUBLIC__/js/jquery-2.1.0.min.js"></script>
+		<script src="__PUBLIC__/js/common.js"></script>
+		<script src="__PUBLIC__/js/jquery.gritter.min.js"></script>
+		<!--导入js文件-->
+		<include file="$js_file" />
+	</head>
+	<body>
+		
+		<div class="col-sm-4 well login_wall" id="login_wall">
+			<div class="text-center"><img src="__PUBLIC__/img/default.jpg" alt="陈业" style="width: 100px;height: 100px;border-radius: 50px;overflow: hidden;"/></div>
+			<form method="post" class="form-horizontal" style="margin-top: 10px;" id="form_login">
+			<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-8">
+   					<input type="text" class="form-control" id="account" name="account" check="required" msg="账号必须" placeholder="账号">
+   				</div>
+  			</div>
+  			<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-8">
+    				<input type="password" class="form-control" id="password" name="password" check="required" msg="密码必须" placeholder="密码">
+    			</div>	
+  			</div>
+  			<div class="form-group">
+  				<div class="col-sm-offset-3 col-sm-9">
+    			 <span class="button-wrap">
+   				   <input type="button" class="button button-pill button-raised button-primary" value="登陆" onclick="login()">
+   				 </span>
+   				</div>
+  			</div>
+		</form>
+		</div>
+		
+	</body>
+</html>

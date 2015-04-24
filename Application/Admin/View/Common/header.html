@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/button.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.gritter.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Admin/style.css">
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/Admin/other.css">
+		
+		<script src="__PUBLIC__/js/jquery-2.1.0.min.js"></script>
+		<script src="__PUBLIC__/js/common.js"></script>
+		<script src="__PUBLIC__/js/jquery.gritter.min.js"></script>
+		<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+		<script src="__PUBLIC__/js/bootbox.js"></script>
+		<script type="text/javascript">
+			 var sid = '{:session_id()}';
+		</script>
+		
+		<!--导入js文件-->
+		<include file="$js_file" />
+		
+		<include file="Widget:plugin"/>
+	</head>
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a href="{:U('Index/index')}" class="navbar-brand"><i class="fa fa-desktop"></i>{:get_system_config("SYSTEM_NAME")}</a>
+			</div>
+			<div id="navbar-collapse-6" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<a href="{:U('article/index')}" class="nav-btn"><i class="fa fa-file-text"></i><span>文章</span></a>
+					<a href="" class="nav-btn"><i class="fa fa-pencil-square-o"></i><span>问卷</span></a>
+					<a href="{:U('user/index')}" class="nav-btn"><i class="fa fa-cogs bigger-100"></i><span>设置</span></a>
+					<a href="{:U('Login/login_out')}" class="nav-btn out"><i class="fa fa-sign-out bigger-100"></i><span class="out">退出</span></a>
+				</ul>
+			</div>
+		</nav>

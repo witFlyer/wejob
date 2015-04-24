@@ -1,0 +1,83 @@
+/*手机端适配*/
+/*******************************container**********************/
+.web_job_search_li{
+	margin-right: 30px !important;
+	width: 270px;
+}
+
+.ksite-manager-item .new_job_title{
+	color: #515151;
+	font-size: 16px;
+	margin-bottom: 6px;
+}
+.el{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ksite-manager-item{
+	border: 1px solid #ccc;
+	box-shadow: 0 0 2px rgba(200, 200, 200, 0.5);
+	padding: 10px;
+	left: -15px;
+	position: relative;
+	width: 100%;
+}
+.ksite-manager-item .new_header .new_avatar{
+	padding-right: 10px;
+}
+.ksite-manager-item .new_header .new_avatar img{
+	border-radius: 5px;
+	height: 45px;
+	width: 45px;
+}
+.ksite-manager-item .new_header .new_avatar a{
+	display: block;
+	border-radius: 5px;
+	height: 45px;
+	width: 45px;
+	border: 1px solid red;
+}
+.ksite-manager-item .new_header .new_uname{
+	color: #34495E;
+	font-size: 18px;
+	min-width: 175px;
+}
+.ksite-manager-item .new_header .new_uname .email{
+	color: #999999;
+	font-size: 13px;
+}
+.manager_item_new .ksite-manager-item .job_info{
+	height: auto;
+}
+.ksite-manager-item .job_info{
+	border-top: 1px dotted #CCCCCC;
+	margin-top: 17px;
+	padding-top: 12px;
+	position: relative;
+}
+.ksite-manager-item .company_tag{
+	margin-top: 10px;
+	max-height: 24px;
+	overflow: hidden;
+}
+.ksite-manager-item .company_tag .tag_inline{
+	color: #999;
+	display: inline-block;
+	margin-right: 10px;
+}
+.ksite-manager-item .job_info .title{
+	color: #0488cd;
+	font-size: 16px;
+	position: absolute;
+	top: -12px;
+	display: inline-block;
+	z-index: 666;
+}
+.ksite-manager-item .action-bar{
+	border-top: 1px solid #eee;
+	margin-top: 10px;
+	padding-top: 10px;
+	vertical-align: top;
+	text-align: right;
+}

@@ -1,0 +1,77 @@
+<include file="Common:header" />
+		<div class="main_container" id="main_container" >
+			<div class="container_box">
+				<div class="main_content" style="margin-left:0px">
+					<div class="page_content {$Think.CONTROLLER_NAME }">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="row">
+									<div class="col-xs-12">
+										<div class="row">
+											<div class="col-xs-12 col-sm-6 widget-container-span" id="t1">
+											<div class="widget-box" sort="1">
+											<div class="widget-header">
+												<h5 class="smaller" style="color:#1590CD;"><i class="fa fa-file-text" style="margin-right: 5px;"></i>文章</h5>
+											</div>
+											<div class="widget-body">
+												<div class="ul_table widget-main">
+													<ul>
+													<empty name="new_article">
+														<li style="padding-top:10xp;color:#777;">暂无数据</li>
+													<else />
+													<volist name="new_article" id="vo">
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone">{$vo.create_time|date="Y-m-d H:i",###}</span>
+														<span  class="auto autocut"><a href="{:U('article/edit','id='.$vo['id'])}" return_url="{:U('article/index')}">{$vo.name}</a> </span>
+													</li>
+													</volist>
+													</empty>
+													</ul>
+												</div>
+											</div>
+											</div>
+											</div>
+											<div class="col-xs-12 col-sm-6 widget-container-span" id="t2">
+											<div class="widget-box" sort="2">
+											<div class="widget-header">
+												<h5 class="smaller" style="color: red;"><i class="fa fa-cogs bigger" style="margin-right: 5px;"></i>系统</h5>
+											</div>
+											<div class="widget-body">
+												<div class="ul_table widget-main">
+													<ul>
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone">{:get_user_name()}</span>
+														<span  class="auto autocut">登陆人：</span>
+													</li>
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone">{$login_time|date="Y-m-d H:i",###}</span>
+														<span  class="auto autocut">登陆时间：</span>
+													</li>
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone">{:get_client_ip()}</span>
+														<span  class="auto autocut">IP地址：</span>
+													</li>
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone">{:get_server_software()}</span>
+														<span  class="auto autocut">开发环境：</span>
+													</li>
+													<li style="font-size:14px;">
+														<span class="pull-right hidden-phone"><?php echo mysql_get_server_info();?></span>
+														<span  class="auto autocut">Mysql版本：</span>
+													</li>
+													</ul>
+												</div>
+											</div>
+											</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

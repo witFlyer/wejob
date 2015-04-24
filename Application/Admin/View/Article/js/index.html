@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	function add() {
+		location.href = "{:U('Article/add')}";
+	};
+	function del(){
+		var values = $('#form_data').serialize();
+		ui_confirm("确定删除吗?",function(){
+			sendAjax("{:U('del')}",values,function(data){
+				if(data){
+					$("input[name='article_id[]']:checked").parents('li').slideUp();
+				}
+			})
+		});
+	}
+	$(document).ready(function(){
+		set_return_url();
+		$('#id-article-all').click(function(){
+			$('input[name="article_id[]"]').attr('checked',this.checked);
+		})
+		var $subBox = $("input[name='article_id[]']");
+        $subBox.click(function(){
+       		$("#id-article-all").attr("checked",$subBox.length == $("input[name='article_id[]']:checked").length ? true : false);
+        });
+        
+	})
+</script>

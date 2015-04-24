@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	function login(){
+		if(check_form('form_login')){
+			sendForm("form_login","{:U('login/check_login')}");
+		}
+	}
+	$(document).ready(function(){
+		var login_wall = $('#login_wall');
+		var top = $(window).height()-login_wall.height()-100;
+		var left = $(window).width()-login_wall.width();
+		login_wall.css({'left':left/2,'top':top/2});
+	});
+
+</script>
