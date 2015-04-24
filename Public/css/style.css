@@ -60,6 +60,7 @@ img{
 	padding: 7px 20px;
 	text-decoration: none;
 	border-radius: 3px;
+	cursor: pointer;
 }
 #options li a.selected{
 	background: #0488CD;
@@ -69,7 +70,6 @@ img{
 .search-input{
 	height: 38px !important;
 	width: 218px;
-	text-indent: 3px;
 	color: #777;
 }
 /***********************************Footer*************************/
