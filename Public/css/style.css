@@ -2,7 +2,7 @@ body{
 	font-family: "微软雅黑","Open Sans",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 24px;
-	background-color: #ffffff;
+	background-color: #F2F3F2;
 	padding: 0;
 	margin: 0;
 }
@@ -72,7 +72,6 @@ img{
 	text-indent: 3px;
 	color: #777;
 }
-
 /***********************************Footer*************************/
 #foot{
 	margin-top: 30px;

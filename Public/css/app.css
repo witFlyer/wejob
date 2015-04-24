@@ -1,4 +1,24 @@
 /*手机端适配*/
+/*******************************header**********************/
+.logo{
+	height: 86px;
+	border-bottom: 4px solid #0488CD;
+}
+.ksite-city-list{
+	color: #FFFFFF;
+	font-size: 14px;
+	margin-left: 12px;
+	margin-top: 24px;
+}
+.ksite-city-list a{
+	color: #0488CD;
+}
+.ksite-city-list a:hover{
+	color: #999;
+}
+.ksite-city-list .city{
+	font-size: 20px;
+}
 /*******************************container**********************/
 .web_job_search_li{
 	margin-right: 30px !important;
@@ -16,6 +36,7 @@
 	white-space: nowrap;
 }
 .ksite-manager-item{
+	background: none repeat scroll 0 0 #FFFFFF;
 	border: 1px solid #ccc;
 	box-shadow: 0 0 2px rgba(200, 200, 200, 0.5);
 	padding: 10px;
@@ -80,4 +101,7 @@
 	padding-top: 10px;
 	vertical-align: top;
 	text-align: right;
+}
+.manager_item_new{
+	margin-bottom: 25px;
 }

@@ -1,28 +1,42 @@
 <script type="text/javascript">
-	$(document).ready(function(){
-	$('#img_small').hover(function(){
-		$('#img_big').stop().fadeIn();
-	},function(){
-		$('#img_big').stop().fadeOut();
-	})
-	
-	var left = $('#weixin').offset().left+150;
-	var top = $('#weixin').offset().top-190;
-	var obj = $('#weixin_logo');
-	obj.css({'top':top,'left':left});
-	
-	$('#weixin').hover(function (){
-		var div = $('#weixin_logo');
-		div.stop().animate({
-			opacity:1,
-			left:left+30
-		},400);		
-	},function(){
-		var div = $('#weixin_logo');
-		div.stop().animate({
-			left:left,
-			opacity:0
-		},400);
+	function pubu(){
+	//内容区瀑布流
+	var iPan=$('#waterfall .well');
+	var iPanW=iPan.offsetWidth;
+	var iMainW=$('#waterfall')[0].offsetWidth;
+	var num=Math.floor(iMainW/iPanW);
+	var publicW=num*iPanW;
+	$('#waterfall').css({width:publicW});
+	//获取最小高度
+	var comparArr=[];
+	iPan.each(function(i){
+		if(i<num){
+			comparArr[i]=iPan.eq(i)[0].offsetHeight;
+		}else{
+			var minH=Math.min.apply('',comparArr);
+			var minKey=getMinKey(comparArr,minH);
+			// alert(minKey);
+			var left=iPan.eq(minKey)[0].offsetLeft;
+			comparArr[minKey]+=iPan.eq(i)[0].offsetHeight;
+			iPan.eq(i).css({position:'absolute',left:left,top:minH});
+			var maxH=Math.max.apply({},comparArr);
+			$('#waterfall').css({height:maxH});
+		}
 	});
-});
+	}
+	//获取最小高度的key
+	function getMinKey(arr,minH){
+		for(key in arr){
+			if(arr[key]==minH){
+				return key;
+			}
+		}
+	}
+
+	window.onload=function(){
+		pubu();
+	};
+	window.onresize=function(){
+		pubu();
+	};
 </script>

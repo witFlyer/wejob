@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
+		<title>微招聘</title>
 		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="__PUBLIC__/css/style.css" />
@@ -12,12 +12,21 @@
 		<script src="__PUBLIC__/js/jquery-2.1.0.min.js"></script>
 		<script src="__PUBLIC__/js/common.js"></script>
 		<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+		<include file="$js_file" />
 	</head>
 	<body>
 		<div class="wap">
 			<header id="header">
 				<div class="main-header kdesktop">
-					
+					<div class="container clearfix">
+						<div class="logo pull-left current">
+							<h1><a href="" style="width: 125px;height: 60px; font-size: 35px; color: #FFFFFF;">微招聘</a></h1>
+						</div>
+						<div class="ksite-city-list pull-left">
+							<li class="city">上海</li>
+							<li><a href="">[切换城市]</a></li>
+						</div>
+					</div>
 				</div>
 			</header>
 			<div id="main">
@@ -39,9 +48,9 @@
 						</ul>
 					</div>
 				</div>
-				<div class="container">
+				<div class="container" id="waterfall">
 					<div class="company_container">
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new cell">
 							<ul class="ksite-manager-item">
 								<ul class="uparea">
 									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
@@ -62,42 +71,14 @@
 								</li>
 								<li class="job_info">
 									<div class="title">招聘信息</div>
-									<div style="height: 50px;" class="position_list">职位列表</div>
+									<div style="height: 150px;" class="position_list">职位列表</div>
 								</li>
 								<li class="action-bar">
 									<a href="" class="btn btn-info">查看详情</a>
 								</li>
 							</ul>
 						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-							<ul class="ksite-manager-item">
-								<ul class="uparea">
-									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
-									<li class="new_header clearfix">
-										<div class="new_avatar pull-left">
-											<a href=""><img src="" alt="" /></a>
-										</div>
-										<div class="pull-left">
-											<div class="new_uname el">张总 <span class="email"></span></div>
-										</div>
-									</li>
-								</ul>
-								<li class="company_tag">
-									<div class="tag_inline">
-										<i class="fa fa-tag"></i>
-										知名企业
-									</div>
-								</li>
-								<li class="job_info">
-									<div class="title">招聘信息</div>
-									<div style="height: 50px;">职位列表</div>
-								</li>
-								<li class="action-bar">
-									<a href="" class="btn btn-info">查看详情</a>
-								</li>
-							</ul>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new cell">
 							<ul class="ksite-manager-item">
 								<ul class="uparea">
 									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
@@ -125,7 +106,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new cell">
 							<ul class="ksite-manager-item">
 								<ul class="uparea">
 									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
@@ -153,7 +134,35 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new cell">
+							<ul class="ksite-manager-item">
+								<ul class="uparea">
+									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
+									<li class="new_header clearfix">
+										<div class="new_avatar pull-left">
+											<a href=""><img src="" alt="" /></a>
+										</div>
+										<div class="pull-left">
+											<div class="new_uname el">张总 <span class="email"></span></div>
+										</div>
+									</li>
+								</ul>
+								<li class="company_tag">
+									<div class="tag_inline">
+										<i class="fa fa-tag"></i>
+										知名企业
+									</div>
+								</li>
+								<li class="job_info">
+									<div class="title">招聘信息</div>
+									<div style="height: 50px;">职位列表</div>
+								</li>
+								<li class="action-bar">
+									<a href="" class="btn btn-info">查看详情</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 manager_item_new cell">
 							<ul class="ksite-manager-item">
 								<ul class="uparea">
 									<li class="new_job_title el" title="BestMinr/百思CEO&Cofounder">BestMinr/百思CEO&Cofounder</li>
@@ -185,17 +194,6 @@
 				</div>
 			</div>
 		</div>
-		<footer id="foot">
-			<div class="row">
-			<div id="social-icons" class="col-xs-12">
-				<a href="" class="icon-gplus" target="_blank"><i class="fa fa-weibo fa-2x"></i>新浪微博</a>
-			</div>
-			<div id="copyrights" class="col-xs-12">
-				<section class="copyright">All content copyright <a href="">Ghost 中文网</a> © 2015 • All rights reserved.</section>
-				<section class="poweredby">All content copyright&nbsp;<a href="">陈业</a> © 2015 • All rights reserved.</section>
-				<section class="beian"><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11008151号</a> | 京公网安备11010802014853</section>
-			</div>
-		</div>
-		</footer>
+	<include file="Layout:footer">
 	</body>
 </html>
